@@ -1,0 +1,65 @@
+{
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "feature_importances": {
+        "dst_host_count": 0.3116552334335531,
+        "srv_count": 0.2177885670033808,
+        "serror_rate": 0.1280425476940203,
+        "same_srv_rate": 0.11379087138395932,
+        "packet_len": 0.09015959138527549,
+        "tcp_flags_syn": 0.07729686459725892,
+        "tcp_flags_ack": 0.04477546188555105,
+        "tcp_flags_psh": 0.014530071032852079,
+        "protocol_type": 0.001924911476826123,
+        "tcp_flags_fin": 3.58801073228405e-05,
+        "tcp_flags_rst": 0.0
+    },
+    "classification_report": {
+        "0": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 600.0
+        },
+        "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 240.0
+        },
+        "2": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 180.0
+        },
+        "3": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 180.0
+        },
+        "accuracy": 1.0,
+        "macro avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1200.0
+        },
+        "weighted avg": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1-score": 1.0,
+            "support": 1200.0
+        }
+    },
+    "classes": [
+        "Normal",
+        "SYN Flood (DDoS)",
+        "Port Scan",
+        "Infiltration/Brute Force"
+    ],
+    "timestamp": "2026-06-16T08:59:02.214597"
+}
