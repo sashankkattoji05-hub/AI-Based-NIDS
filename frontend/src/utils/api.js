@@ -1,4 +1,12 @@
-export const API_BASE = '/api';
+// Replace this domain with your live Render backend URL after deploying it
+export const BACKEND_HOST = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? 'localhost:8000'
+  : 'ai-based-nids-backend.onrender.com'; // Replace with your Render domain
+
+export const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  ? '/api'
+  : `https://${BACKEND_HOST}/api`;
+
 
 export const fetchStatus = async () => {
   const res = await fetch(`${API_BASE}/status`);
@@ -66,7 +74,14 @@ export const retrainModel = async () => {
 
 export const getWebSocketUrl = () => {
   const loc = window.location;
-  const proto = loc.protocol === 'https:' ? 'wss:' : 'ws:';
-  const port = loc.port === '3000' ? '8000' : loc.port;
-  return `${proto}//${loc.hostname}:${port}/ws/traffic`;
+  const isLocal = loc.hostname === 'localhost' || loc.hostname === '127.0.0.1';
+  
+  if (isLocal) {
+    const proto = loc.protocol === 'https:' ? 'wss:' : 'ws:';
+    const port = loc.port === '3000' ? '8000' : loc.port;
+    return `${proto}//${loc.hostname}:${port}/ws/traffic`;
+  } else {
+    // Production secure WebSocket
+    return `wss://${BACKEND_HOST}/ws/traffic`;
+  }
 };
