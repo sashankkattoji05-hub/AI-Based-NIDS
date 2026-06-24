@@ -1,7 +1,7 @@
 // Replace this domain with your live Render backend URL after deploying it
 export const BACKEND_HOST = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? 'localhost:8000'
-  : 'ai-based-nids-backend.onrender.com'; // Replace with your Render domain
+  : 'ai-based-nids.onrender.com'; // Replace with your Render domain
 
 export const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? '/api'
